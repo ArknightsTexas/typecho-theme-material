@@ -22,7 +22,7 @@ $this->need('header.php'); ?>
             <span id="MD-burger-id" class="MD-burger-layer"></span>
         </button>
 
-        <div class="mdc-layout-grid__inner">
+        <div class="material-index mdc-layout-grid__inner">
 
             <?php if ($this->is('index') && $this->_currentPage == 1): ?>
             <!-- Daily Pic -->
@@ -58,7 +58,8 @@ $this->need('header.php'); ?>
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-card mdc-shadow--<?php $this->options->CardElevation() ?>dp something-else mdc-cell mdc-cell--8-col mdc-cell--4-col-desktop index-top-block">
                     <!-- Search -->
                     <?php if ((!empty($this->options->searchis) && $this->options->searchis == '1')): ?>
-                        <div class="mdc-text-field text-field mdc-text-field--fullwidth mdc-text-field--no-label mdc-ripple-upgraded">
+                        <div id="search-field"
+                            class="mdc-text-field text-field mdc-text-field--fullwidth mdc-text-field--no-label mdc-ripple-upgraded">
                             <button id="search-label"
                                    class="mdc-fab"
                                    for="search">

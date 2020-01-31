@@ -490,7 +490,6 @@ a {
 }
 #scheme-Paradox .material-layout .material-post,
 #scheme-Paradox .material-layout .material-index {
-    display: flex;
     margin: 0 auto;
     padding: 0;
     width: 100%;
@@ -1128,13 +1127,19 @@ a {
     position: absolute;
     top: 0
 }
+#scheme-Paradox #search-field {
+    overflow: visible;
+}
 #scheme-Paradox #search-label {
+    position: absolute;
     right: 28px;
     bottom: 39px;
     z-index: 7;
 }
 #scheme-Paradox #search-form {
-    bottom: 46px
+    position: absolute;
+    margin-left: 32px;
+    bottom: 56px
 }
 #scheme-Paradox #search-form-label {
     left: 1px
@@ -1142,6 +1147,10 @@ a {
 #scheme-Paradox #search-form-label:after {
     background-color: #ff4081;
     width: 100%
+}
+#scheme-Paradox #search {
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 #scheme-Paradox .mdc-badge[data-badge]:after {
     width: 20px;

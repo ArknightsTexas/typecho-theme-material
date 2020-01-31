@@ -105,7 +105,7 @@
 
     <!-- Material style -->
     <?php cssLsload("material_css", "css/material.min.css") ?>
-    <?php cssLsload("style_css", "css/style.min.css") ?>
+    <?php cssLsload("style_css", "css/style.css") ?>
     <?php cssLsload("material_icons", "css/material-icons.css") ?>
 
     <!-- Disqus JS -->

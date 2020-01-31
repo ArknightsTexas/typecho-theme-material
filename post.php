@@ -2,7 +2,7 @@
 
 <div class="material-layout  mdc-js-layout has-drawer is-upgraded">
 
-    <main class="material-layout__content" id="main">
+    <main class="material-layout__content mdc-layout-grid" id="main">
         <div id="top"></div>
         <!-- Hamburger Button -->
         <button class="MD-burger-icon sidebar-toggle">
@@ -11,10 +11,10 @@
 
         <!-- Post module -->
         <div class="material-post_container">
-            <div class="material-post mdc-grid">
+            <div class="material-post mdc-layout-grid__inner">
 
                 <!-- Article title -->
-                <div class="mdc-card mdc-shadow--4dp mdc-cell mdc-cell--12-col">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-card">
                     <div class="post_thumbnail-custom mdc-card__media mdc-color-text--grey-50" style="background-image: url(<?php echo showThumbnail($this); ?>);">
                         <p class="article-headline-p">
                             <?php $this->title() ?>
