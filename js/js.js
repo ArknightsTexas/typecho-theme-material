@@ -16,7 +16,7 @@
 var pjaxReloads=new Object();
 (pjaxReloads.Custom=function(){
     $(document).ready(function() {
-        Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
+        Array.prototype.forEach.call(document.querySelectorAll('.mdc-card__media'), function(el) {
             var link = el.querySelector('a');
             if (!link) {
                 return;
@@ -102,7 +102,7 @@ $(window).scroll(function (event) {
 		$('#back-to-top').removeClass('btt-visible');
 	}
 
-	var footerOffset = $('.mdl-mini-footer').offset().top;
+	var footerOffset = $('.mdc-mini-footer').offset().top;
 	var windowHeight = $( window ).height();
 	if (scroll > footerOffset - windowHeight + 42) {
 		$('#back-to-top').addClass('btt-docked');
@@ -170,11 +170,11 @@ function MaterialTabs(e) {
 function MaterialTab(e, t) {
     "use strict";
     if (e) {
-        if (t.element_.classList.contains(t.CssClasses_.MDL_JS_RIPPLE_EFFECT)) {
+        if (t.element_.classList.contains(t.CssClasses_.mdc_JS_RIPPLE_EFFECT)) {
             var s = document.createElement("span");
-            s.classList.add(t.CssClasses_.MDL_RIPPLE_CONTAINER), s.classList.add(t.CssClasses_.MDL_JS_RIPPLE_EFFECT);
+            s.classList.add(t.CssClasses_.mdc_RIPPLE_CONTAINER), s.classList.add(t.CssClasses_.mdc_JS_RIPPLE_EFFECT);
             var i = document.createElement("span");
-            i.classList.add(t.CssClasses_.MDL_RIPPLE), s.appendChild(i), e.appendChild(s)
+            i.classList.add(t.CssClasses_.mdc_RIPPLE), s.appendChild(i), e.appendChild(s)
         }
         e.addEventListener("click", function(s) {
             s.preventDefault();
@@ -260,7 +260,7 @@ var componentHandler = function() {
     }
 
     function n(i, n) {
-        if (!("object" == typeof i && i instanceof Element)) throw new Error("Invalid argument provided to upgrade MDL element.");
+        if (!("object" == typeof i && i instanceof Element)) throw new Error("Invalid argument provided to upgrade mdc element.");
         var a = t(i),
             l = [];
         if (n) s(i, n) || l.push(e(n));
@@ -278,7 +278,7 @@ var componentHandler = function() {
             for (var p = 0, E = o.callbacks.length; E > p; p++) o.callbacks[p](i);
             o.widget && (i[o.className] = h);
             var m = document.createEvent("Events");
-            m.initEvent("mdl-componentupgraded", !0, !0), i.dispatchEvent(m)
+            m.initEvent("mdc-componentupgraded", !0, !0), i.dispatchEvent(m)
         }
     }
 
@@ -298,7 +298,7 @@ var componentHandler = function() {
         if (c.forEach(function(e) {
                 if (e.cssClass === s.cssClass) throw new Error("The provided cssClass has already been registered.");
                 if (e.className === s.className) throw new Error("The provided className has already been registered")
-            }), t.constructor.prototype.hasOwnProperty(C)) throw new Error("MDL component classes must not have " + C + " defined as a property.");
+            }), t.constructor.prototype.hasOwnProperty(C)) throw new Error("mdc component classes must not have " + C + " defined as a property.");
         var i = e(t.classAsString, s);
         i || c.push(s)
     }
@@ -328,7 +328,7 @@ var componentHandler = function() {
                 i = s.indexOf(e[C].classAsString);
             s.splice(i, 1), e.element_.setAttribute("data-upgraded", s.join(","));
             var n = document.createEvent("Events");
-            n.initEvent("mdl-componentdowngraded", !0, !0), e.element_.dispatchEvent(n)
+            n.initEvent("mdc-componentdowngraded", !0, !0), e.element_.dispatchEvent(n)
         }
     }
 
@@ -339,14 +339,14 @@ var componentHandler = function() {
         if (e instanceof Array || e instanceof NodeList)
             for (var s = 0; s < e.length; s++) t(e[s]);
         else {
-            if (!(e instanceof Node)) throw new Error("Invalid argument provided to downgrade MDL nodes.");
+            if (!(e instanceof Node)) throw new Error("Invalid argument provided to downgrade mdc nodes.");
             t(e)
         }
     }
     var c = [],
         u = [],
-        p = "mdlDowngrade_",
-        C = "mdlComponentConfigInternal_";
+        p = "mdcDowngrade_",
+        C = "mdcComponentConfigInternal_";
     return {
         upgradeDom: i,
         upgradeElement: n,
@@ -359,7 +359,7 @@ var componentHandler = function() {
 }();
 window.addEventListener("load", function() {
         "use strict";
-        "classList" in document.createElement("div") && "querySelector" in document && "addEventListener" in window && Array.prototype.forEach ? (document.documentElement.classList.add("mdl-js"), componentHandler.upgradeAllRegistered()) : componentHandler.upgradeElement = componentHandler.register = function() {}
+        "classList" in document.createElement("div") && "querySelector" in document && "addEventListener" in window && Array.prototype.forEach ? (document.documentElement.classList.add("mdc-js"), componentHandler.upgradeAllRegistered()) : componentHandler.upgradeElement = componentHandler.register = function() {}
     }),
     function() {
         "use strict";
@@ -381,9 +381,9 @@ window.addEventListener("load", function() {
             }, window.cancelAnimationFrame = clearTimeout
         }
     }(), MaterialButton.prototype.Constant_ = {}, MaterialButton.prototype.CssClasses_ = {
-        RIPPLE_EFFECT: "mdl-js-ripple-effect",
-        RIPPLE_CONTAINER: "mdl-button__ripple-container",
-        RIPPLE: "mdl-ripple"
+        RIPPLE_EFFECT: "mdc-js-ripple-effect",
+        RIPPLE_CONTAINER: "mdc-button__ripple-container",
+        RIPPLE: "mdc-ripple"
     }, MaterialButton.prototype.blurHandler = function(e) {
         "use strict";
         e && this.element_.blur()
@@ -402,26 +402,26 @@ window.addEventListener("load", function() {
             }
             this.boundButtonBlurHandler = this.blurHandler.bind(this), this.element_.addEventListener("mouseup", this.boundButtonBlurHandler), this.element_.addEventListener("mouseleave", this.boundButtonBlurHandler)
         }
-    }, MaterialButton.prototype.mdlDowngrade_ = function() {
+    }, MaterialButton.prototype.mdcDowngrade_ = function() {
         "use strict";
         this.rippleElement_ && this.rippleElement_.removeEventListener("mouseup", this.boundRippleBlurHandler), this.element_.removeEventListener("mouseup", this.boundButtonBlurHandler), this.element_.removeEventListener("mouseleave", this.boundButtonBlurHandler)
     }, componentHandler.register({
         constructor: MaterialButton,
         classAsString: "MaterialButton",
-        cssClass: "mdl-js-button",
+        cssClass: "mdc-js-button",
         widget: !0
     }), MaterialCheckbox.prototype.Constant_ = {
         TINY_TIMEOUT: .001
     }, MaterialCheckbox.prototype.CssClasses_ = {
-        INPUT: "mdl-checkbox__input",
-        BOX_OUTLINE: "mdl-checkbox__box-outline",
-        FOCUS_HELPER: "mdl-checkbox__focus-helper",
-        TICK_OUTLINE: "mdl-checkbox__tick-outline",
-        RIPPLE_EFFECT: "mdl-js-ripple-effect",
-        RIPPLE_IGNORE_EVENTS: "mdl-js-ripple-effect--ignore-events",
-        RIPPLE_CONTAINER: "mdl-checkbox__ripple-container",
-        RIPPLE_CENTER: "mdl-ripple--center",
-        RIPPLE: "mdl-ripple",
+        INPUT: "mdc-checkbox__input",
+        BOX_OUTLINE: "mdc-checkbox__box-outline",
+        FOCUS_HELPER: "mdc-checkbox__focus-helper",
+        TICK_OUTLINE: "mdc-checkbox__tick-outline",
+        RIPPLE_EFFECT: "mdc-js-ripple-effect",
+        RIPPLE_IGNORE_EVENTS: "mdc-js-ripple-effect--ignore-events",
+        RIPPLE_CONTAINER: "mdc-checkbox__ripple-container",
+        RIPPLE_CENTER: "mdc-ripple--center",
+        RIPPLE: "mdc-ripple",
         IS_FOCUSED: "is-focused",
         IS_DISABLED: "is-disabled",
         IS_CHECKED: "is-checked",
@@ -480,23 +480,23 @@ window.addEventListener("load", function() {
             }
             this.boundInputOnChange = this.onChange_.bind(this), this.boundInputOnFocus = this.onFocus_.bind(this), this.boundInputOnBlur = this.onBlur_.bind(this), this.boundElementMouseUp = this.onMouseUp_.bind(this), this.inputElement_.addEventListener("change", this.boundInputOnChange), this.inputElement_.addEventListener("focus", this.boundInputOnFocus), this.inputElement_.addEventListener("blur", this.boundInputOnBlur), this.element_.addEventListener("mouseup", this.boundElementMouseUp), this.updateClasses_(), this.element_.classList.add(this.CssClasses_.IS_UPGRADED)
         }
-    }, MaterialCheckbox.prototype.mdlDowngrade_ = function() {
+    }, MaterialCheckbox.prototype.mdcDowngrade_ = function() {
         "use strict";
         this.rippleContainerElement_ && this.rippleContainerElement_.removeEventListener("mouseup", this.boundRippleMouseUp), this.inputElement_.removeEventListener("change", this.boundInputOnChange), this.inputElement_.removeEventListener("focus", this.boundInputOnFocus), this.inputElement_.removeEventListener("blur", this.boundInputOnBlur), this.element_.removeEventListener("mouseup", this.boundElementMouseUp)
     }, componentHandler.register({
         constructor: MaterialCheckbox,
         classAsString: "MaterialCheckbox",
-        cssClass: "mdl-js-checkbox",
+        cssClass: "mdc-js-checkbox",
         widget: !0
     }), MaterialIconToggle.prototype.Constant_ = {
         TINY_TIMEOUT: .001
     }, MaterialIconToggle.prototype.CssClasses_ = {
-        INPUT: "mdl-icon-toggle__input",
-        JS_RIPPLE_EFFECT: "mdl-js-ripple-effect",
-        RIPPLE_IGNORE_EVENTS: "mdl-js-ripple-effect--ignore-events",
-        RIPPLE_CONTAINER: "mdl-icon-toggle__ripple-container",
-        RIPPLE_CENTER: "mdl-ripple--center",
-        RIPPLE: "mdl-ripple",
+        INPUT: "mdc-icon-toggle__input",
+        JS_RIPPLE_EFFECT: "mdc-js-ripple-effect",
+        RIPPLE_IGNORE_EVENTS: "mdc-js-ripple-effect--ignore-events",
+        RIPPLE_CONTAINER: "mdc-icon-toggle__ripple-container",
+        RIPPLE_CENTER: "mdc-ripple--center",
+        RIPPLE: "mdc-ripple",
         IS_FOCUSED: "is-focused",
         IS_DISABLED: "is-disabled",
         IS_CHECKED: "is-checked"
@@ -548,13 +548,13 @@ window.addEventListener("load", function() {
             }
             this.boundInputOnChange = this.onChange_.bind(this), this.boundInputOnFocus = this.onFocus_.bind(this), this.boundInputOnBlur = this.onBlur_.bind(this), this.boundElementOnMouseUp = this.onMouseUp_.bind(this), this.inputElement_.addEventListener("change", this.boundInputOnChange), this.inputElement_.addEventListener("focus", this.boundInputOnFocus), this.inputElement_.addEventListener("blur", this.boundInputOnBlur), this.element_.addEventListener("mouseup", this.boundElementOnMouseUp), this.updateClasses_(), this.element_.classList.add("is-upgraded")
         }
-    }, MaterialIconToggle.prototype.mdlDowngrade_ = function() {
+    }, MaterialIconToggle.prototype.mdcDowngrade_ = function() {
         "use strict";
         this.rippleContainerElement_ && this.rippleContainerElement_.removeEventListener("mouseup", this.boundRippleMouseUp), this.inputElement_.removeEventListener("change", this.boundInputOnChange), this.inputElement_.removeEventListener("focus", this.boundInputOnFocus), this.inputElement_.removeEventListener("blur", this.boundInputOnBlur), this.element_.removeEventListener("mouseup", this.boundElementOnMouseUp)
     }, componentHandler.register({
         constructor: MaterialIconToggle,
         classAsString: "MaterialIconToggle",
-        cssClass: "mdl-js-icon-toggle",
+        cssClass: "mdc-js-icon-toggle",
         widget: !0
     }), MaterialMenu.prototype.Constant_ = {
         TRANSITION_DURATION_SECONDS: .3,
@@ -567,21 +567,21 @@ window.addEventListener("load", function() {
         UP_ARROW: 38,
         DOWN_ARROW: 40
     }, MaterialMenu.prototype.CssClasses_ = {
-        CONTAINER: "mdl-menu__container",
-        OUTLINE: "mdl-menu__outline",
-        ITEM: "mdl-menu__item",
-        ITEM_RIPPLE_CONTAINER: "mdl-menu__item-ripple-container",
-        RIPPLE_EFFECT: "mdl-js-ripple-effect",
-        RIPPLE_IGNORE_EVENTS: "mdl-js-ripple-effect--ignore-events",
-        RIPPLE: "mdl-ripple",
+        CONTAINER: "mdc-menu__container",
+        OUTLINE: "mdc-menu__outline",
+        ITEM: "mdc-menu__item",
+        ITEM_RIPPLE_CONTAINER: "mdc-menu__item-ripple-container",
+        RIPPLE_EFFECT: "mdc-js-ripple-effect",
+        RIPPLE_IGNORE_EVENTS: "mdc-js-ripple-effect--ignore-events",
+        RIPPLE: "mdc-ripple",
         IS_UPGRADED: "is-upgraded",
         IS_VISIBLE: "is-visible",
         IS_ANIMATING: "is-animating",
-        BOTTOM_LEFT: "mdl-menu--bottom-left",
-        BOTTOM_RIGHT: "mdl-menu--bottom-right",
-        TOP_LEFT: "mdl-menu--top-left",
-        TOP_RIGHT: "mdl-menu--top-right",
-        UNALIGNED: "mdl-menu--unaligned"
+        BOTTOM_LEFT: "mdc-menu--bottom-left",
+        BOTTOM_RIGHT: "mdc-menu--bottom-right",
+        TOP_LEFT: "mdc-menu--top-left",
+        TOP_RIGHT: "mdc-menu--top-right",
+        UNALIGNED: "mdc-menu--unaligned"
     }, MaterialMenu.prototype.init = function() {
         "use strict";
         if (this.element_) {
@@ -678,10 +678,10 @@ window.addEventListener("load", function() {
     }, componentHandler.register({
         constructor: MaterialMenu,
         classAsString: "MaterialMenu",
-        cssClass: "mdl-js-menu",
+        cssClass: "mdc-js-menu",
         widget: !0
     }), MaterialProgress.prototype.Constant_ = {}, MaterialProgress.prototype.CssClasses_ = {
-        INDETERMINATE_CLASS: "mdl-progress__indeterminate"
+        INDETERMINATE_CLASS: "mdc-progress__indeterminate"
     }, MaterialProgress.prototype.setProgress = function(e) {
         "use strict";
         this.element_.classList.contains(this.CssClasses_.INDETERMINATE_CLASS) || (this.progressbar_.style.width = e + "%")
@@ -694,13 +694,13 @@ window.addEventListener("load", function() {
             var e = document.createElement("div");
             e.className = "progressbar bar bar1", this.element_.appendChild(e), this.progressbar_ = e, e = document.createElement("div"), e.className = "bufferbar bar bar2", this.element_.appendChild(e), this.bufferbar_ = e, e = document.createElement("div"), e.className = "auxbar bar bar3", this.element_.appendChild(e), this.auxbar_ = e, this.progressbar_.style.width = "0%", this.bufferbar_.style.width = "100%", this.auxbar_.style.width = "0%", this.element_.classList.add("is-upgraded")
         }
-    }, MaterialProgress.prototype.mdlDowngrade_ = function() {
+    }, MaterialProgress.prototype.mdcDowngrade_ = function() {
         "use strict";
         for (; this.element_.firstChild;) this.element_.removeChild(this.element_.firstChild)
     }, componentHandler.register({
         constructor: MaterialProgress,
         classAsString: "MaterialProgress",
-        cssClass: "mdl-js-progress",
+        cssClass: "mdc-js-progress",
         widget: !0
     }), MaterialRadio.prototype.Constant_ = {
         TINY_TIMEOUT: .001
@@ -709,15 +709,15 @@ window.addEventListener("load", function() {
         IS_DISABLED: "is-disabled",
         IS_CHECKED: "is-checked",
         IS_UPGRADED: "is-upgraded",
-        JS_RADIO: "mdl-js-radio",
-        RADIO_BTN: "mdl-radio__button",
-        RADIO_OUTER_CIRCLE: "mdl-radio__outer-circle",
-        RADIO_INNER_CIRCLE: "mdl-radio__inner-circle",
-        RIPPLE_EFFECT: "mdl-js-ripple-effect",
-        RIPPLE_IGNORE_EVENTS: "mdl-js-ripple-effect--ignore-events",
-        RIPPLE_CONTAINER: "mdl-radio__ripple-container",
-        RIPPLE_CENTER: "mdl-ripple--center",
-        RIPPLE: "mdl-ripple"
+        JS_RADIO: "mdc-js-radio",
+        RADIO_BTN: "mdc-radio__button",
+        RADIO_OUTER_CIRCLE: "mdc-radio__outer-circle",
+        RADIO_INNER_CIRCLE: "mdc-radio__inner-circle",
+        RIPPLE_EFFECT: "mdc-js-ripple-effect",
+        RIPPLE_IGNORE_EVENTS: "mdc-js-ripple-effect--ignore-events",
+        RIPPLE_CONTAINER: "mdc-radio__ripple-container",
+        RIPPLE_CENTER: "mdc-ripple--center",
+        RIPPLE: "mdc-ripple"
     }, MaterialRadio.prototype.onChange_ = function(e) {
         "use strict";
         for (var t = document.getElementsByClassName(this.CssClasses_.JS_RADIO), s = 0; s < t.length; s++) {
@@ -778,14 +778,14 @@ window.addEventListener("load", function() {
     }, componentHandler.register({
         constructor: MaterialRadio,
         classAsString: "MaterialRadio",
-        cssClass: "mdl-js-radio",
+        cssClass: "mdc-js-radio",
         widget: !0
     }), MaterialSlider.prototype.Constant_ = {}, MaterialSlider.prototype.CssClasses_ = {
-        IE_CONTAINER: "mdl-slider__ie-container",
-        SLIDER_CONTAINER: "mdl-slider__container",
-        BACKGROUND_FLEX: "mdl-slider__background-flex",
-        BACKGROUND_LOWER: "mdl-slider__background-lower",
-        BACKGROUND_UPPER: "mdl-slider__background-upper",
+        IE_CONTAINER: "mdc-slider__ie-container",
+        SLIDER_CONTAINER: "mdc-slider__container",
+        BACKGROUND_FLEX: "mdc-slider__background-flex",
+        BACKGROUND_LOWER: "mdc-slider__background-lower",
+        BACKGROUND_UPPER: "mdc-slider__background-upper",
         IS_LOWEST_VALUE: "is-lowest-value",
         IS_UPGRADED: "is-upgraded"
     }, MaterialSlider.prototype.onInput_ = function(e) {
@@ -837,36 +837,36 @@ window.addEventListener("load", function() {
             this.boundInputHandler = this.onInput_.bind(this), this.boundChangeHandler = this.onChange_.bind(this), this.boundMouseUpHandler = this.onMouseUp_.bind(this), this.boundContainerMouseDownHandler = this.onContainerMouseDown_.bind(this),
                 this.element_.addEventListener("input", this.boundInputHandler), this.element_.addEventListener("change", this.boundChangeHandler), this.element_.addEventListener("mouseup", this.boundMouseUpHandler), this.element_.parentElement.addEventListener("mousedown", this.boundContainerMouseDownHandler), this.updateValueStyles_(), this.element_.classList.add(this.CssClasses_.IS_UPGRADED)
         }
-    }, MaterialSlider.prototype.mdlDowngrade_ = function() {
+    }, MaterialSlider.prototype.mdcDowngrade_ = function() {
         "use strict";
         this.element_.removeEventListener("input", this.boundInputHandler), this.element_.removeEventListener("change", this.boundChangeHandler), this.element_.removeEventListener("mouseup", this.boundMouseUpHandler), this.element_.parentElement.removeEventListener("mousedown", this.boundContainerMouseDownHandler)
     }, componentHandler.register({
         constructor: MaterialSlider,
         classAsString: "MaterialSlider",
-        cssClass: "mdl-js-slider",
+        cssClass: "mdc-js-slider",
         widget: !0
     }), MaterialSpinner.prototype.Constant_ = {
-        MDL_SPINNER_LAYER_COUNT: 4
+        mdc_SPINNER_LAYER_COUNT: 4
     }, MaterialSpinner.prototype.CssClasses_ = {
-        MDL_SPINNER_LAYER: "mdl-spinner__layer",
-        MDL_SPINNER_CIRCLE_CLIPPER: "mdl-spinner__circle-clipper",
-        MDL_SPINNER_CIRCLE: "mdl-spinner__circle",
-        MDL_SPINNER_GAP_PATCH: "mdl-spinner__gap-patch",
-        MDL_SPINNER_LEFT: "mdl-spinner__left",
-        MDL_SPINNER_RIGHT: "mdl-spinner__right"
+        mdc_SPINNER_LAYER: "mdc-spinner__layer",
+        mdc_SPINNER_CIRCLE_CLIPPER: "mdc-spinner__circle-clipper",
+        mdc_SPINNER_CIRCLE: "mdc-spinner__circle",
+        mdc_SPINNER_GAP_PATCH: "mdc-spinner__gap-patch",
+        mdc_SPINNER_LEFT: "mdc-spinner__left",
+        mdc_SPINNER_RIGHT: "mdc-spinner__right"
     }, MaterialSpinner.prototype.createLayer = function(e) {
         "use strict";
         var t = document.createElement("div");
-        t.classList.add(this.CssClasses_.MDL_SPINNER_LAYER), t.classList.add(this.CssClasses_.MDL_SPINNER_LAYER + "-" + e);
+        t.classList.add(this.CssClasses_.mdc_SPINNER_LAYER), t.classList.add(this.CssClasses_.mdc_SPINNER_LAYER + "-" + e);
         var s = document.createElement("div");
-        s.classList.add(this.CssClasses_.MDL_SPINNER_CIRCLE_CLIPPER), s.classList.add(this.CssClasses_.MDL_SPINNER_LEFT);
+        s.classList.add(this.CssClasses_.mdc_SPINNER_CIRCLE_CLIPPER), s.classList.add(this.CssClasses_.mdc_SPINNER_LEFT);
         var i = document.createElement("div");
-        i.classList.add(this.CssClasses_.MDL_SPINNER_GAP_PATCH);
+        i.classList.add(this.CssClasses_.mdc_SPINNER_GAP_PATCH);
         var n = document.createElement("div");
-        n.classList.add(this.CssClasses_.MDL_SPINNER_CIRCLE_CLIPPER), n.classList.add(this.CssClasses_.MDL_SPINNER_RIGHT);
+        n.classList.add(this.CssClasses_.mdc_SPINNER_CIRCLE_CLIPPER), n.classList.add(this.CssClasses_.mdc_SPINNER_RIGHT);
         for (var a = [s, i, n], l = 0; l < a.length; l++) {
             var r = document.createElement("div");
-            r.classList.add(this.CssClasses_.MDL_SPINNER_CIRCLE), a[l].appendChild(r)
+            r.classList.add(this.CssClasses_.mdc_SPINNER_CIRCLE), a[l].appendChild(r)
         }
         t.appendChild(s), t.appendChild(i), t.appendChild(n), this.element_.appendChild(t)
     }, MaterialSpinner.prototype.stop = function() {
@@ -878,26 +878,26 @@ window.addEventListener("load", function() {
     }, MaterialSpinner.prototype.init = function() {
         "use strict";
         if (this.element_) {
-            for (var e = 1; e <= this.Constant_.MDL_SPINNER_LAYER_COUNT; e++) this.createLayer(e);
+            for (var e = 1; e <= this.Constant_.mdc_SPINNER_LAYER_COUNT; e++) this.createLayer(e);
             this.element_.classList.add("is-upgraded")
         }
     }, componentHandler.register({
         constructor: MaterialSpinner,
         classAsString: "MaterialSpinner",
-        cssClass: "mdl-js-spinner",
+        cssClass: "mdc-js-spinner",
         widget: !0
     }), MaterialSwitch.prototype.Constant_ = {
         TINY_TIMEOUT: .001
     }, MaterialSwitch.prototype.CssClasses_ = {
-        INPUT: "mdl-switch__input",
-        TRACK: "mdl-switch__track",
-        THUMB: "mdl-switch__thumb",
-        FOCUS_HELPER: "mdl-switch__focus-helper",
-        RIPPLE_EFFECT: "mdl-js-ripple-effect",
-        RIPPLE_IGNORE_EVENTS: "mdl-js-ripple-effect--ignore-events",
-        RIPPLE_CONTAINER: "mdl-switch__ripple-container",
-        RIPPLE_CENTER: "mdl-ripple--center",
-        RIPPLE: "mdl-ripple",
+        INPUT: "mdc-switch__input",
+        TRACK: "mdc-switch__track",
+        THUMB: "mdc-switch__thumb",
+        FOCUS_HELPER: "mdc-switch__focus-helper",
+        RIPPLE_EFFECT: "mdc-js-ripple-effect",
+        RIPPLE_IGNORE_EVENTS: "mdc-js-ripple-effect--ignore-events",
+        RIPPLE_CONTAINER: "mdc-switch__ripple-container",
+        RIPPLE_CENTER: "mdc-ripple--center",
+        RIPPLE: "mdc-ripple",
         IS_FOCUSED: "is-focused",
         IS_DISABLED: "is-disabled",
         IS_CHECKED: "is-checked"
@@ -955,26 +955,26 @@ window.addEventListener("load", function() {
             }
             this.boundChangeHandler = this.onChange_.bind(this), this.boundFocusHandler = this.onFocus_.bind(this), this.boundBlurHandler = this.onBlur_.bind(this), this.inputElement_.addEventListener("change", this.boundChangeHandler), this.inputElement_.addEventListener("focus", this.boundFocusHandler), this.inputElement_.addEventListener("blur", this.boundBlurHandler), this.element_.addEventListener("mouseup", this.boundMouseUpHandler), this.updateClasses_(), this.element_.classList.add("is-upgraded")
         }
-    }, MaterialSwitch.prototype.mdlDowngrade_ = function() {
+    }, MaterialSwitch.prototype.mdcDowngrade_ = function() {
         "use strict";
         this.rippleContainerElement_ && this.rippleContainerElement_.removeEventListener("mouseup", this.boundMouseUpHandler), this.inputElement_.removeEventListener("change", this.boundChangeHandler), this.inputElement_.removeEventListener("focus", this.boundFocusHandler), this.inputElement_.removeEventListener("blur", this.boundBlurHandler), this.element_.removeEventListener("mouseup", this.boundMouseUpHandler)
     }, componentHandler.register({
         constructor: MaterialSwitch,
         classAsString: "MaterialSwitch",
-        cssClass: "mdl-js-switch",
+        cssClass: "mdc-js-switch",
         widget: !0
     }), MaterialTabs.prototype.Constant_ = {}, MaterialTabs.prototype.CssClasses_ = {
-        TAB_CLASS: "mdl-tabs__tab",
-        PANEL_CLASS: "mdl-tabs__panel",
+        TAB_CLASS: "mdc-tabs__tab",
+        PANEL_CLASS: "mdc-tabs__panel",
         ACTIVE_CLASS: "is-active",
         UPGRADED_CLASS: "is-upgraded",
-        MDL_JS_RIPPLE_EFFECT: "mdl-js-ripple-effect",
-        MDL_RIPPLE_CONTAINER: "mdl-tabs__ripple-container",
-        MDL_RIPPLE: "mdl-ripple",
-        MDL_JS_RIPPLE_EFFECT_IGNORE_EVENTS: "mdl-js-ripple-effect--ignore-events"
+        mdc_JS_RIPPLE_EFFECT: "mdc-js-ripple-effect",
+        mdc_RIPPLE_CONTAINER: "mdc-tabs__ripple-container",
+        mdc_RIPPLE: "mdc-ripple",
+        mdc_JS_RIPPLE_EFFECT_IGNORE_EVENTS: "mdc-js-ripple-effect--ignore-events"
     }, MaterialTabs.prototype.initTabs_ = function(e) {
         "use strict";
-        this.element_.classList.contains(this.CssClasses_.MDL_JS_RIPPLE_EFFECT) && this.element_.classList.add(this.CssClasses_.MDL_JS_RIPPLE_EFFECT_IGNORE_EVENTS), this.tabs_ = this.element_.querySelectorAll("." + this.CssClasses_.TAB_CLASS), this.panels_ = this.element_.querySelectorAll("." + this.CssClasses_.PANEL_CLASS);
+        this.element_.classList.contains(this.CssClasses_.mdc_JS_RIPPLE_EFFECT) && this.element_.classList.add(this.CssClasses_.mdc_JS_RIPPLE_EFFECT_IGNORE_EVENTS), this.tabs_ = this.element_.querySelectorAll("." + this.CssClasses_.TAB_CLASS), this.panels_ = this.element_.querySelectorAll("." + this.CssClasses_.PANEL_CLASS);
         for (var t = 0; t < this.tabs_.length; t++) new MaterialTab(this.tabs_[t], this);
         this.element_.classList.add(this.CssClasses_.UPGRADED_CLASS)
     }, MaterialTabs.prototype.resetTabState_ = function() {
@@ -989,13 +989,13 @@ window.addEventListener("load", function() {
     }, componentHandler.register({
         constructor: MaterialTabs,
         classAsString: "MaterialTabs",
-        cssClass: "mdl-js-tabs"
+        cssClass: "mdc-js-tabs"
     }), MaterialTextfield.prototype.Constant_ = {
         NO_MAX_ROWS: -1,
         MAX_ROWS_ATTRIBUTE: "maxrows"
     }, MaterialTextfield.prototype.CssClasses_ = {
-        LABEL: "mdl-textfield__label",
-        INPUT: "mdl-textfield__input",
+        LABEL: "mdc-textfield__label",
+        INPUT: "mdc-textfield__input",
         IS_DIRTY: "is-dirty",
         IS_FOCUSED: "is-focused",
         IS_DISABLED: "is-disabled",
@@ -1035,13 +1035,13 @@ window.addEventListener("load", function() {
     }, MaterialTextfield.prototype.init = function() {
         "use strict";
         this.element_ && (this.label_ = this.element_.querySelector("." + this.CssClasses_.LABEL), this.input_ = this.element_.querySelector("." + this.CssClasses_.INPUT), this.input_ && (this.input_.hasAttribute(this.Constant_.MAX_ROWS_ATTRIBUTE) && (this.maxRows = parseInt(this.input_.getAttribute(this.Constant_.MAX_ROWS_ATTRIBUTE), 10), isNaN(this.maxRows) && (this.maxRows = this.Constant_.NO_MAX_ROWS)), this.boundUpdateClassesHandler = this.updateClasses_.bind(this), this.boundFocusHandler = this.onFocus_.bind(this), this.boundBlurHandler = this.onBlur_.bind(this), this.input_.addEventListener("input", this.boundUpdateClassesHandler), this.input_.addEventListener("focus", this.boundFocusHandler), this.input_.addEventListener("blur", this.boundBlurHandler), this.maxRows !== this.Constant_.NO_MAX_ROWS && (this.boundKeyDownHandler = this.onKeyDown_.bind(this), this.input_.addEventListener("keydown", this.boundKeyDownHandler)), this.updateClasses_(), this.element_.classList.add(this.CssClasses_.IS_UPGRADED)))
-    }, MaterialTextfield.prototype.mdlDowngrade_ = function() {
+    }, MaterialTextfield.prototype.mdcDowngrade_ = function() {
         "use strict";
         this.input_.removeEventListener("input", this.boundUpdateClassesHandler), this.input_.removeEventListener("focus", this.boundFocusHandler), this.input_.removeEventListener("blur", this.boundBlurHandler), this.boundKeyDownHandler && this.input_.removeEventListener("keydown", this.boundKeyDownHandler)
     }, componentHandler.register({
         constructor: MaterialTextfield,
         classAsString: "MaterialTextfield",
-        cssClass: "mdl-js-textfield",
+        cssClass: "mdc-js-textfield",
         widget: !0
     }), MaterialTooltip.prototype.Constant_ = {}, MaterialTooltip.prototype.CssClasses_ = {
         IS_ACTIVE: "is-active"
@@ -1061,13 +1061,13 @@ window.addEventListener("load", function() {
             var e = this.element_.getAttribute("for");
             e && (this.forElement_ = document.getElementById(e)), this.forElement_ && (this.forElement_.getAttribute("tabindex") || this.forElement_.setAttribute("tabindex", "0"), this.boundMouseEnterHandler = this.handleMouseEnter_.bind(this), this.boundMouseLeaveHandler = this.handleMouseLeave_.bind(this), this.forElement_.addEventListener("mouseenter", this.boundMouseEnterHandler, !1), this.forElement_.addEventListener("click", this.boundMouseEnterHandler, !1), this.forElement_.addEventListener("blur", this.boundMouseLeaveHandler), this.forElement_.addEventListener("touchstart", this.boundMouseEnterHandler, !1), this.forElement_.addEventListener("mouseleave", this.boundMouseLeaveHandler))
         }
-    }, MaterialTooltip.prototype.mdlDowngrade_ = function() {
+    }, MaterialTooltip.prototype.mdcDowngrade_ = function() {
         "use strict";
         this.forElement_ && (this.forElement_.removeEventListener("mouseenter", this.boundMouseEnterHandler, !1), this.forElement_.removeEventListener("click", this.boundMouseEnterHandler, !1), this.forElement_.removeEventListener("touchstart", this.boundMouseEnterHandler, !1), this.forElement_.removeEventListener("mouseleave", this.boundMouseLeaveHandler))
     }, componentHandler.register({
         constructor: MaterialTooltip,
         classAsString: "MaterialTooltip",
-        cssClass: "mdl-tooltip"
+        cssClass: "mdc-tooltip"
     }), MaterialLayout.prototype.Constant_ = {
         MAX_WIDTH: "(max-width: 1024px)",
         TAB_SCROLL_PIXELS: 100,
@@ -1080,28 +1080,28 @@ window.addEventListener("load", function() {
         WATERFALL: 2,
         SCROLL: 3
     }, MaterialLayout.prototype.CssClasses_ = {
-        CONTAINER: "mdl-layout__container",
-        HEADER: "mdl-layout__header",
-        DRAWER: "mdl-layout__drawer",
-        CONTENT: "mdl-layout__content",
-        DRAWER_BTN: "mdl-layout__drawer-button",
+        CONTAINER: "mdc-layout__container",
+        HEADER: "mdc-layout__header",
+        DRAWER: "mdc-layout__drawer",
+        CONTENT: "mdc-layout__content",
+        DRAWER_BTN: "mdc-layout__drawer-button",
         ICON: "material-icons",
-        JS_RIPPLE_EFFECT: "mdl-js-ripple-effect",
-        RIPPLE_CONTAINER: "mdl-layout__tab-ripple-container",
-        RIPPLE: "mdl-ripple",
-        RIPPLE_IGNORE_EVENTS: "mdl-js-ripple-effect--ignore-events",
-        HEADER_SEAMED: "mdl-layout__header--seamed",
-        HEADER_WATERFALL: "mdl-layout__header--waterfall",
-        HEADER_SCROLL: "mdl-layout__header--scroll",
-        FIXED_HEADER: "mdl-layout--fixed-header",
-        OBFUSCATOR: "mdl-layout__obfuscator",
-        TAB_BAR: "mdl-layout__tab-bar",
-        TAB_CONTAINER: "mdl-layout__tab-bar-container",
-        TAB: "mdl-layout__tab",
-        TAB_BAR_BUTTON: "mdl-layout__tab-bar-button",
-        TAB_BAR_LEFT_BUTTON: "mdl-layout__tab-bar-left-button",
-        TAB_BAR_RIGHT_BUTTON: "mdl-layout__tab-bar-right-button",
-        PANEL: "mdl-layout__tab-panel",
+        JS_RIPPLE_EFFECT: "mdc-js-ripple-effect",
+        RIPPLE_CONTAINER: "mdc-layout__tab-ripple-container",
+        RIPPLE: "mdc-ripple",
+        RIPPLE_IGNORE_EVENTS: "mdc-js-ripple-effect--ignore-events",
+        HEADER_SEAMED: "mdc-layout__header--seamed",
+        HEADER_WATERFALL: "mdc-layout__header--waterfall",
+        HEADER_SCROLL: "mdc-layout__header--scroll",
+        FIXED_HEADER: "mdc-layout--fixed-header",
+        OBFUSCATOR: "mdc-layout__obfuscator",
+        TAB_BAR: "mdc-layout__tab-bar",
+        TAB_CONTAINER: "mdc-layout__tab-bar-container",
+        TAB: "mdc-layout__tab",
+        TAB_BAR_BUTTON: "mdc-layout__tab-bar-button",
+        TAB_BAR_LEFT_BUTTON: "mdc-layout__tab-bar-left-button",
+        TAB_BAR_RIGHT_BUTTON: "mdc-layout__tab-bar-right-button",
+        PANEL: "mdc-layout__tab-panel",
         HAS_DRAWER: "has-drawer",
         HAS_TABS: "has-tabs",
         HAS_SCROLLING_HEADER: "has-scrolling-header",
@@ -1112,8 +1112,8 @@ window.addEventListener("load", function() {
         IS_ACTIVE: "is-active",
         IS_UPGRADED: "is-upgraded",
         IS_ANIMATING: "is-animating",
-        ON_LARGE_SCREEN: "mdl-layout--large-screen-only",
-        ON_SMALL_SCREEN: "mdl-layout--small-screen-only"
+        ON_LARGE_SCREEN: "mdc-layout--large-screen-only",
+        ON_SMALL_SCREEN: "mdc-layout--small-screen-only"
     }, MaterialLayout.prototype.contentScrollHandler_ = function() {
         "use strict";
         this.header_.classList.contains(this.CssClasses_.IS_ANIMATING) || (this.content_.scrollTop > 0 && !this.header_.classList.contains(this.CssClasses_.IS_COMPACT) ? (this.header_.classList.add(this.CssClasses_.CASTING_SHADOW), this.header_.classList.add(this.CssClasses_.IS_COMPACT), this.header_.classList.add(this.CssClasses_.IS_ANIMATING)) : this.content_.scrollTop <= 0 && this.header_.classList.contains(this.CssClasses_.IS_COMPACT) && (this.header_.classList.remove(this.CssClasses_.CASTING_SHADOW), this.header_.classList.remove(this.CssClasses_.IS_COMPACT), this.header_.classList.add(this.CssClasses_.IS_ANIMATING)))
@@ -1181,10 +1181,10 @@ window.addEventListener("load", function() {
     }, componentHandler.register({
         constructor: MaterialLayout,
         classAsString: "MaterialLayout",
-        cssClass: "mdl-js-layout"
+        cssClass: "mdc-js-layout"
     }), MaterialDataTable.prototype.Constant_ = {}, MaterialDataTable.prototype.CssClasses_ = {
-        DATA_TABLE: "mdl-data-table",
-        SELECTABLE: "mdl-data-table--selectable",
+        DATA_TABLE: "mdc-data-table",
+        SELECTABLE: "mdc-data-table--selectable",
         IS_SELECTED: "is-selected",
         IS_UPGRADED: "is-upgraded"
     }, MaterialDataTable.prototype.selectRow_ = function(e, t, s) {
@@ -1194,16 +1194,16 @@ window.addEventListener("load", function() {
         }.bind(this) : s ? function() {
             var t, i;
             if (e.checked)
-                for (t = 0; t < s.length; t++) i = s[t].querySelector("td").querySelector(".mdl-checkbox"), i.MaterialCheckbox.check(), s[t].classList.add(this.CssClasses_.IS_SELECTED);
+                for (t = 0; t < s.length; t++) i = s[t].querySelector("td").querySelector(".mdc-checkbox"), i.MaterialCheckbox.check(), s[t].classList.add(this.CssClasses_.IS_SELECTED);
             else
-                for (t = 0; t < s.length; t++) i = s[t].querySelector("td").querySelector(".mdl-checkbox"), i.MaterialCheckbox.uncheck(), s[t].classList.remove(this.CssClasses_.IS_SELECTED)
+                for (t = 0; t < s.length; t++) i = s[t].querySelector("td").querySelector(".mdc-checkbox"), i.MaterialCheckbox.uncheck(), s[t].classList.remove(this.CssClasses_.IS_SELECTED)
         }.bind(this) : void 0
     }, MaterialDataTable.prototype.createCheckbox_ = function(e, t) {
         "use strict";
         var s = document.createElement("label");
-        s.classList.add("mdl-checkbox"), s.classList.add("mdl-js-checkbox"), s.classList.add("mdl-js-ripple-effect"), s.classList.add("mdl-data-table__select");
+        s.classList.add("mdc-checkbox"), s.classList.add("mdc-js-checkbox"), s.classList.add("mdc-js-ripple-effect"), s.classList.add("mdc-data-table__select");
         var i = document.createElement("input");
-        return i.type = "checkbox", i.classList.add("mdl-checkbox__input"), e ? i.addEventListener("change", this.selectRow_(i, e)) : t && i.addEventListener("change", this.selectRow_(i, null, t)), s.appendChild(i), componentHandler.upgradeElement(s, "MaterialCheckbox"), s
+        return i.type = "checkbox", i.classList.add("mdc-checkbox__input"), e ? i.addEventListener("change", this.selectRow_(i, e)) : t && i.addEventListener("change", this.selectRow_(i, null, t)), s.appendChild(i), componentHandler.upgradeElement(s, "MaterialCheckbox"), s
     }, MaterialDataTable.prototype.init = function() {
         "use strict";
         if (this.element_) {
@@ -1227,7 +1227,7 @@ window.addEventListener("load", function() {
     }, componentHandler.register({
         constructor: MaterialDataTable,
         classAsString: "MaterialDataTable",
-        cssClass: "mdl-js-data-table"
+        cssClass: "mdc-js-data-table"
     }), MaterialRipple.prototype.Constant_ = {
         INITIAL_SCALE: "scale(0.0001, 0.0001)",
         INITIAL_SIZE: "1px",
@@ -1235,9 +1235,9 @@ window.addEventListener("load", function() {
         FINAL_OPACITY: "0",
         FINAL_SCALE: ""
     }, MaterialRipple.prototype.CssClasses_ = {
-        RIPPLE_CENTER: "mdl-ripple--center",
-        RIPPLE_EFFECT_IGNORE_EVENTS: "mdl-js-ripple-effect--ignore-events",
-        RIPPLE: "mdl-ripple",
+        RIPPLE_CENTER: "mdc-ripple--center",
+        RIPPLE_EFFECT_IGNORE_EVENTS: "mdc-js-ripple-effect--ignore-events",
+        RIPPLE: "mdc-ripple",
         IS_ANIMATING: "is-animating",
         IS_VISIBLE: "is-visible"
     }, MaterialRipple.prototype.downHandler_ = function(e) {
@@ -1285,13 +1285,13 @@ window.addEventListener("load", function() {
                 this.frameCount_-- > 0 ? window.requestAnimationFrame(this.animFrameHandler.bind(this)) : this.setRippleStyles(!1)
             })
         }
-    }, MaterialRipple.prototype.mdlDowngrade_ = function() {
+    }, MaterialRipple.prototype.mdcDowngrade_ = function() {
         "use strict";
         this.element_.removeEventListener("mousedown", this.boundDownHandler), this.element_.removeEventListener("touchstart", this.boundDownHandler), this.element_.removeEventListener("mouseup", this.boundUpHandler), this.element_.removeEventListener("mouseleave", this.boundUpHandler), this.element_.removeEventListener("touchend", this.boundUpHandler), this.element_.removeEventListener("blur", this.boundUpHandler)
     }, componentHandler.register({
         constructor: MaterialRipple,
         classAsString: "MaterialRipple",
-        cssClass: "mdl-js-ripple-effect",
+        cssClass: "mdc-js-ripple-effect",
         widget: !1
     });
 

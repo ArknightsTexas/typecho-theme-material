@@ -86,7 +86,7 @@ $this->need('header.php'); ?>
         line-height: 50px;
     }
 
-    #scheme-Paradox .mdl-mini-footer{
+    #scheme-Paradox .mdc-mini-footer{
         clear: left;
     }
     #bottom{
@@ -94,7 +94,7 @@ $this->need('header.php'); ?>
     }
 </style>
 
-<div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+<div class="material-layout  mdc-js-layout has-drawer is-upgraded">
 
     <main class="material-layout__content" id="main">
 

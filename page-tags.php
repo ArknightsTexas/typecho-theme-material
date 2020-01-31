@@ -32,7 +32,7 @@ $this->need('header.php'); ?>
     }
 </style>
 
-<div class="material-layout mdl-js-layout has-drawer is-upgraded">
+<div class="material-layout mdc-js-layout has-drawer is-upgraded">
     <main class="material-layout__content" id="main">
 
         <!-- Top Anchor -->
@@ -44,7 +44,7 @@ $this->need('header.php'); ?>
         </button>
 
         <div class=" material-tagscloud">
-            <div class="material-post mdl-grid">
+            <div class="material-post mdc-grid">
             <?php $this->widget('Widget_Metas_Tag_Cloud','sort=name&ignoreZeroCount=1&desc=0')->to($tag);$max = 0; ?>
             <?php while ($tag->next()) if ($tag->count > $max) $max = $tag->count; ?>
             <?php while ($tag->next()): ?>

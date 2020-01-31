@@ -1,18 +1,18 @@
-#scheme-Paradox .mdl-grid{
+#scheme-Paradox .mdc-grid{
   display: block !important;
 }
 
-#scheme-Paradox .material-layout .mdl-card{
+#scheme-Paradox .material-layout .mdc-card{
   margin-left: 0;
   margin-right: 0;
   width: 100%;
 }
 
-#scheme-Paradox .material-layout .mdl-card{
+#scheme-Paradox .material-layout .mdc-card{
   display: block;
 }
 
-#scheme-Paradox .material-layout .mdl-card__media{
+#scheme-Paradox .material-layout .mdc-card__media{
   display: block;
 }
 
@@ -25,7 +25,7 @@
   padding-top: 80px !important;
 }
 
-#scheme-Paradox .material-layout .mdl-card__media{
+#scheme-Paradox .material-layout .mdc-card__media{
   height: 223px;
 }
 

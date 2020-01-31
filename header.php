@@ -134,7 +134,7 @@
             color: <?php $this->options->alinkcolor(); ?>;
         }
 
-        .mdl-card__media,
+        .mdc-card__media,
         #search-label,
         #search-form-label:after,
         #scheme-Paradox .hot_tags-count,
@@ -160,11 +160,11 @@
         .sidebar-colored .sidebar-nav > .open > a:hover,
         .sidebar-colored .sidebar-nav > .open > a:focus,
         #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,
-        .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
+        .mdc-textfield--floating-label.is-focused .mdc-textfield__label, .mdc-textfield--floating-label.is-dirty .mdc-textfield__label {
             color: <?php $this->options->ThemeColor() ?> !important;
         }
 
-        .mdl-textfield__label:after {
+        .mdc-textfield__label:after {
             background-color: <?php $this->options->ThemeColor() ?> !important;
         }
 
@@ -219,7 +219,7 @@
                 background-color: #F5F5F5;
             <?php endif; ?>
             }
-            .demo-blog .something-else .mdl-card__supporting-text{
+            .demo-blog .something-else .mdc-card__supporting-text{
                 background-color: #fff;
             }
             .MD-burger-layer{

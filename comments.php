@@ -4,7 +4,7 @@
     $commentClass = '';
     $commentLevelClass = $comments->_levels > 0 ? ' comment-child' : ' comment-parent';  //评论层数大于0为子级，否则是父级
     ?>
-    <div id="li-<?php $comments->theId(); ?>" class="comment mdl-color-text--grey-700 comment-body<?php
+    <div id="li-<?php $comments->theId(); ?>" class="comment mdc-color-text--grey-700 comment-body<?php
     if ($comments->_levels > 0) {
         echo ' comment-child';
         $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
@@ -39,24 +39,24 @@
         <!-- Comment actions -->
         <nav class="comment__actions">
             <!-- reply -->
-            <?php $comments->reply('<button id="comment-reply-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <?php $comments->reply('<button id="comment-reply-button" class="mdc-button mdc-js-button mdc-js-ripple-effect mdc-button--icon">
             <i class="material-icons" role="presentation">forum</i>
             <span class="visuallyhidden">reply comment</span>
             </button>'); ?>
             <!-- share -->
-            <button id="comment-share-<?php $comments->theId(); ?>-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <button id="comment-share-<?php $comments->theId(); ?>-button" class="mdc-button mdc-js-button mdc-js-ripple-effect mdc-button--icon">
                 <i class="material-icons" role="presentation">share</i>
                 <span class="visuallyhidden">share comment</span>
             </button>
-            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="comment-share-<?php $comments->theId(); ?>-button">
+            <ul class="mdc-menu mdc-menu--bottom-left mdc-js-menu mdc-js-ripple-effect" for="comment-share-<?php $comments->theId(); ?>-button">
                 <a class="md-menu-list-a" target="view_window" href="<?php $comments->permalink(); ?>">
-                    <li class="mdl-menu__item">在新标签页中打开</li>
+                    <li class="mdc-menu__item">在新标签页中打开</li>
                 </a>
                 <a class="md-menu-list-a" href="https://twitter.com/intent/tweet?text=<?php echo htmlspecialchars($comments->content); ?>+from&url=<?php $comments->permalink(); ?>">
-                    <li class="mdl-menu__item">分享到 Twitter</li>
+                    <li class="mdc-menu__item">分享到 Twitter</li>
                 </a>
                 <a class="md-menu-list-a" href="https://plus.google.com/share?url=<?php $comments->permalink(); ?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                    <li class="mdl-menu__item">分享到 Google+</li>
+                    <li class="mdc-menu__item">分享到 Google+</li>
                 </a>
             </ul>
         </nav>
@@ -83,7 +83,7 @@
 <?php if ($this->options->commentis == '0' || (!getThemeOptions('SwitchToDisqusSince') == '' || !getThemeOptions('SwitchToDisqusSince') == null) && $this->cid < (int)getThemeOptions('SwitchToDisqusSince')): ?>
     <!-- 使用原生评论 -->
 
-    <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
+    <div class="mdc-color-text--primary-contrast mdc-card__supporting-text comments">
 
         <?php if ($this->allow('comment')): ?>
 
@@ -106,9 +106,9 @@
 
                         <!-- Input name -->
                         <div class="login-form-group">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input type="text" name="author" class="mdl-textfield__input login-input-info" value="<?php $this->remember('author'); ?>" />
-                                <label for="author" class="mdl-textfield__label">
+                            <div class="mdc-textfield mdc-js-textfield mdc-textfield--floating-label">
+                                <input type="text" name="author" class="mdc-textfield__input login-input-info" value="<?php $this->remember('author'); ?>" />
+                                <label for="author" class="mdc-textfield__label">
                                     <?php if (getThemeOptions("language") === "zh-CN"): ?>
                                     昵称*
                                     <?php else: ?>
@@ -120,9 +120,9 @@
 
                         <!-- Input email -->
                         <div class="login-form-group">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input type="email" name="mail" class="mdl-textfield__input login-input-info" value="<?php $this->remember('mail'); ?>" />
-                                <label for="mail" class="mdl-textfield__label">
+                            <div class="mdc-textfield mdc-js-textfield mdc-textfield--floating-label">
+                                <input type="email" name="mail" class="mdc-textfield__input login-input-info" value="<?php $this->remember('mail'); ?>" />
+                                <label for="mail" class="mdc-textfield__label">
                                     <?php if (getThemeOptions("language") === "zh-CN"): ?>
                                     邮箱*
                                     <?php else: ?>
@@ -134,10 +134,10 @@
 
                         <!-- Input website -->
                         <div class="login-form-group">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input type="url" name="url" id="visitor-url" class="mdl-textfield__input login-input-info" value="<?php $this->remember('url'); ?>" />
+                            <div class="mdc-textfield mdc-js-textfield mdc-textfield--floating-label">
+                                <input type="url" name="url" id="visitor-url" class="mdc-textfield__input login-input-info" value="<?php $this->remember('url'); ?>" />
                                 <!--  placeholder="http://"-->
-                                <label for="url" class="mdl-textfield__label">
+                                <label for="url" class="mdc-textfield__label">
                                     <?php if (getThemeOptions("language") === "zh-CN"): ?>
                                     网站*
                                     <?php else: ?>
@@ -149,9 +149,9 @@
                     <?php endif; ?>
 
                     <!-- Input comment content -->
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="comment-input-div">
-                        <textarea name="text" rows="<?php $this->options->CommentRows() ?>" id="comment" class="mdl-textfield__input"></textarea>
-                        <label for="comment" class="mdl-textfield__label">
+                    <div class="mdc-textfield mdc-js-textfield mdc-textfield--floating-label" id="comment-input-div">
+                        <textarea name="text" rows="<?php $this->options->CommentRows() ?>" id="comment" class="mdc-textfield__input"></textarea>
+                        <label for="comment" class="mdc-textfield__label">
                             <?php if (getThemeOptions("language") === "zh-CN"): ?>
                             加入讨论吧...
                             <?php else: ?>
@@ -162,7 +162,7 @@
 
                     <!-- Submit comment content button -->
                     <?php $comments->reply('
-                    <button id="comment-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <button id="comment-button" class="mdc-button mdc-js-button mdc-js-ripple-effect mdc-button--icon">
                         <i class="material-icons" role="presentation">check</i><span class="visuallyhidden">add comment</span>
                     </button>'); ?>
 
@@ -192,7 +192,7 @@
     </div>
 <?php elseif ($this->options->commentis == '1'): ?>
     <!-- 使用 Disqus 评论 -->
-    <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
+    <div class="mdc-color-text--primary-contrast mdc-card__supporting-text comments">
         <?php if ($this->allow('comment')): ?>
 
         <div id="disqus_thread"></div>

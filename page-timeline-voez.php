@@ -113,7 +113,7 @@ $this->need('header.php'); ?>
     }
 
     @media screen and (max-width: 840px) {
-        .mdl-mini-footer {
+        .mdc-mini-footer {
             height: 200px!important;
             padding: 30px 0 20px!important;
         }

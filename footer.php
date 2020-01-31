@@ -7,12 +7,12 @@
 
 
 <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    <!--mdl-mini-footer-left-section-->
-    <div class="mdl-mini-footer--left-section">
+<footer class="mdc-mini-footer" id="bottom">
+    <!--mdc-mini-footer-left-section-->
+    <div class="mdc-mini-footer--left-section">
         <?php if (!empty($this->options->footersns) && in_array('ShowBilibili', $this->options->footersns)) : ?>
             <a href="<?php $this->options->BilibiliURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-bilibili">
                     <span class="visuallyhidden">Bilibili</span>
                 </button>
             </a>
@@ -20,7 +20,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowWeibo', $this->options->footersns)) : ?>
             <a href="<?php $this->options->WeiboURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-weibo">
                     <span class="visuallyhidden">Weibo</span>
                 </button>
             </a>
@@ -28,7 +28,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowZhihu', $this->options->footersns)) : ?>
             <a href="<?php $this->options->ZhihuURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-zhihu">
                     <span class="visuallyhidden">Zhihu</span>
                 </button>
             </a>
@@ -36,7 +36,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowTwitter', $this->options->footersns)) : ?>
             <a href="<?php $this->options->TwitterURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-twitter">
                     <span class="visuallyhidden">Twitter</span>
                 </button>
             </a>
@@ -44,7 +44,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowV2EX', $this->options->footersns)) : ?>
             <a href="<?php $this->options->V2EXURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-v2ex">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-v2ex">
                     <span class="visuallyhidden">V2EX</span>
                 </button>
             </a>
@@ -52,7 +52,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowFacebook', $this->options->footersns)) : ?>
             <a href="<?php $this->options->FacebookURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-facebook">
                     <span class="visuallyhidden">Facebook</span>
                 </button>
             </a>
@@ -60,7 +60,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowGooglePlus', $this->options->footersns)) : ?>
             <a href="<?php $this->options->GooglePlusURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-gplus">
                     <span class="visuallyhidden">Google Plus</span>
                 </button>
             </a>
@@ -68,7 +68,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowInstagram', $this->options->footersns)) : ?>
             <a href="<?php $this->options->InstagramURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-instagram">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-instagram">
                     <span class="visuallyhidden">Instagram</span>
                 </button>
             </a>
@@ -76,7 +76,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowGithub', $this->options->footersns)) : ?>
             <a href="<?php $this->options->GithubURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-github">
                     <span class="visuallyhidden">Github</span>
                 </button>
             </a>
@@ -84,7 +84,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowTumblr', $this->options->footersns)) : ?>
             <a href="<?php $this->options->TumblrURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-tumblr">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-tumblr">
                     <span class="visuallyhidden">Tumblr</span>
                 </button>
             </a>
@@ -92,7 +92,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowTelegram', $this->options->footersns)) : ?>
             <a href="<?php $this->options->TelegramURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-telegram">
                     <span class="visuallyhidden">Telegram</span>
                 </button>
             </a>
@@ -100,7 +100,7 @@
 
         <?php if (!empty($this->options->footersns) && in_array('ShowLinkedin', $this->options->footersns)) : ?>
             <a href="<?php $this->options->LinkedinURL() ?>" target="_blank">
-                <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <button class="mdc-mini-footer--social-btn social-btn footer-sns-linkedin">
                     <span class="visuallyhidden">LinkedIn</span>
                 </button>
             </a>
@@ -117,8 +117,8 @@
     <?php copyright() ?>
 
 
-    <!--mdl-mini-footer-right-section-->
-    <div class="mdl-mini-footer--right-section">
+    <!--mdc-mini-footer-right-section-->
+    <div class="mdc-mini-footer--right-section">
         <div>
             <div class="footer-develop-div">Powered by <a href="http://typecho.org" target="_blank" class="footer-develop-a">Typecho</a></div>
             <div class="footer-develop-div">Theme - <a href="https://github.com/idawnlight/typecho-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
@@ -126,7 +126,7 @@
     </div>
 </footer>
 </main>
-<div class="mdl-layout__obfuscator"></div>
+<div class="mdc-layout__obfuscator"></div>
 </div>
 
 
@@ -145,6 +145,7 @@
 <!-- Material js -->
 <?php jsLsload("jq_js", "js/jquery.min.js") ?>
 <?php if (!empty($this->options->switch) && in_array('pjaxEnable', $this->options->switch)) jsLsload("pjax_js", "js/jquery.pjax.min.js") ?>
+<?php jsLsload("mdc_js", "js/material.min.js"); ?>
 <?php jsLsload("js_js", "js/js.min.js") ?>
 <?php jsLsload("lazyload_js", "js/lazyload.min.js") ?>
 

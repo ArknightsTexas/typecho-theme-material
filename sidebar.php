@@ -14,7 +14,7 @@
                 <!-- Top bar -->
                 <!--<div class="top-bar"></div>-->
                 <!-- Sidebar toggle button -->
-                <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <button type="button" class="sidebar-toggle mdc-button mdc-js-button mdc-js-ripple-effect mdc-button--icon">
                     <i class="material-icons">clear_all</i>
                 </button>
                 <!-- Sidebar brand image -->
@@ -153,7 +153,7 @@
 
             <!-- Sidebar bottom text -->
             <a href="https://github.com/idawnlight/typecho-theme-material" target="_blank" class="sidebar-footer-text-a">
-                <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+                <div class="sidebar-text mdc-button mdc-js-button mdc-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
                     <?php lang("misc.theme") ?> - Material
                     <span class="sidebar-badge badge-circle">i</span>
                 </div>
